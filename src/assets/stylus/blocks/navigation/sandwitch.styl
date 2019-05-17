@@ -1,0 +1,46 @@
+.sandwitch
+	position relative
+	width 23px
+	height 14px
+	cursor pointer
+	&__wrapper
+		display flex
+		justify-content center
+		align-items center
+		size(60px)
+		background main-shaft
+		border-radius 50%
+
+		&--active
+			background white
+			.sandwitch__line
+				background main-shaft
+				&--top
+					top 6px
+					transform rotate(45deg)
+
+
+				&--middle
+					opacity 0
+
+
+				&--bottom
+					top 6px
+					transform rotate(-45deg)
+
+
+
+	&__line
+		position absolute
+		left 0
+		display block
+		width 100%
+		height 2px
+		transition all linear .1s
+		background-color white
+		&--top
+			top 0
+		&--middle
+			top 6px
+		&--bottom
+			top 12px

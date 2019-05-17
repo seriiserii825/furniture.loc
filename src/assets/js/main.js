@@ -32,7 +32,28 @@ $(function () {
 		});
 	};
 
+	let sandwitch = function () {
+		$(document).on('click', '.sandwitch__wrapper', function () {
+			$(this).toggleClass('sandwitch__wrapper--active');
+		});
+	};
+
+	let openMenu = function () {
+		$(document).on('click', '.sandwitch__wrapper', function () {
+			let $this = $(this);
+			let menuWrapper = $('.menu__wrapper');
+
+			if ($this.hasClass('sandwitch__wrapper--active') === false) {
+				menuWrapper.removeClass('menu__wrapper--open');
+			} else {
+				menuWrapper.addClass('menu__wrapper--open');
+			}
+		});
+	};
+
 	langDropDown();
+	sandwitch();
+	openMenu();
 
 });
 
