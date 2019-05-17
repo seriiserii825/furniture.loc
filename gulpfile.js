@@ -261,6 +261,7 @@ gulp.task('default', gulp.series(
 		// 'webp',
 		// 'svg-bg',
 		'stylint',
+		'video',
 		'fonts',
 		'image',
 		'libs',

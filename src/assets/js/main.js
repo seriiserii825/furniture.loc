@@ -49,11 +49,48 @@ $(function () {
 				menuWrapper.addClass('menu__wrapper--open');
 			}
 		});
+
+	};
+
+	let showMenuCategoriesTitle = function () {
+		$('#js-menu-categories .menu-categories__item').hover(function () {
+			let menuCategoriesTitle = $(this).find('.menu-categories__title');
+			let menuCategoriesSubnavId = menuCategoriesTitle.attr('data-menu-categories');
+			let menuCategoriesSubnav = $('ul' + menuCategoriesSubnavId);
+
+
+			if (menuCategoriesTitle.hasClass('menu-categories__title--show') === false) {
+				menuCategoriesTitle.addClass('menu-categories__title--show');
+			}
+
+			// menuCategoriesSubnav.fadeIn();
+
+			if (menuCategoriesSubnav.is(':hidden')) {
+				setTimeout(function () {
+					$('.menu-categories-subnav').fadeOut();
+					menuCategoriesSubnav.fadeIn();
+				}, 1000);
+				setTimeout(function () {
+					$('.menu-categories__title').removeClass('menu-categories__title--show');
+				}, 800);
+			}
+
+		}, function () {
+			$('.menu-categories__title').removeClass('menu-categories__title--show');
+			// $('.menu-categories-subnav').fadeOut();
+		});
+
+		$('.menu-categories-subnav').on('click', function (e) {
+			$('.menu-categories-subnav').fadeOut();
+			// console.log(e.target);
+		});
+
 	};
 
 	langDropDown();
 	sandwitch();
 	openMenu();
+	showMenuCategoriesTitle();
 
 });
 

@@ -1,0 +1,58 @@
+.menu-categories
+	position relative
+	top 30px
+	right 6px
+	width 100px
+	padding 0 20px
+	text-align center
+	z-index 5
+	&__item
+		position relative
+		margin-bottom 20px
+		cursor pointer
+	&-subnav
+		display none
+		position absolute
+		top 0
+		left -400px
+		padding 30px
+		width 400px
+		height 100%
+		background concrete
+		& > *
+			 margin 20px 0
+			 &:first-child
+					margin-top 0
+			 &:last-child
+					margin-bottom 0
+		&__item
+			&.menu-categories-subnav__item--first
+				padding-bottom 10px
+				border-bottom 1px solid lightgray
+				.menu-categories-subnav__link
+					font-weight bold
+					text-decoration none
+					cursor default
+		&__link
+			&:hover
+				text-decoration underline
+	&__icon
+		size(30px)
+	&__title
+		position absolute
+		top 0
+		left -300px
+		display flex
+		align-items center
+		padding-left 10px
+		width 300px
+		height 40px
+		font-size 14px
+		text-align left
+		transform-origin right
+		transform scaleX(0)
+		background white
+		transition all .2s ease-in
+		cursor pointer
+		&.menu-categories__title--show
+			transform scaleX(1)
