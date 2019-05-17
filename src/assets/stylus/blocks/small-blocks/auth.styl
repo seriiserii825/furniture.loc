@@ -1,0 +1,58 @@
+.auth
+	&__page
+		position fixed
+		top 0
+		left 0
+		right 0
+		bottom 0
+		display flex
+		justify-content center
+		align-items center
+		background concrete
+	&__content
+		& > *
+			 margin 10px 0
+			 &:first-child
+					margin-top 0
+			 &:last-child
+					margin-bottom 0
+	&-link
+		display inline-block
+		vertical-align middle
+		size(24px)
+		line-height 20px
+		text-align center
+		&__icon
+			display inline-block
+			vertical-align middle
+			size(16px)
+	&__form
+		padding 65px 65px 40px
+		width 420px
+		background white
+		& > *
+			 margin 10px 0
+			 &:first-child
+					margin-top 0
+			 &:last-child
+					margin-bottom 0
+	&__form-group
+		display flex
+		justify-content space-between
+		align-items center
+		&.auth__form-group--checkbox
+			display block
+			padding-left 90px
+			cursor pointer
+	&__label
+		font-size 14px
+		cursor pointer
+	&__input
+		padding 0 10px
+		height 24px
+		line-height 24px
+	&__submit
+		display inline-block
+		margin-left auto
+		cursor pointer
+

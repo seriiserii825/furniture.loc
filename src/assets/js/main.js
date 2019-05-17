@@ -2,51 +2,37 @@ $(function () {
   /*
       https://www.jqueryscript.net/animation/Smooth-Mouse-Wheel-Scrolling-Plugin-With-jQuery-easeScroll.html
       ===========================*/
-  $("html").easeScroll({
-    frameRate: 60,
-    animationTime: 1000,
-    stepSize: 90,
-    pulseAlgorithm: 1,
-    pulseScale: 8,
-    pulseNormalize: 1,
-    accelerationDelta: 20,
-    accelerationMax: 1,
-    keyboardSupport: true,
-    arrowScroll: 50,
-    touchpadSupport: true,
-    fixedBackground: true
-  });
-
-	//show menu
-	let closeMenu = $('#js-close-menu');
-	let showMenu = $('#js-show-menu');
-	let navMenu = $('#js-nav-menu');
-
-
-	closeMenu.on('click', function(){
-		closeMenu.hide();
-		showMenu.show();
-		navMenu.slideUp();
+	$("html").easeScroll({
+		frameRate: 60,
+		animationTime: 1000,
+		stepSize: 90,
+		pulseAlgorithm: 1,
+		pulseScale: 8,
+		pulseNormalize: 1,
+		accelerationDelta: 20,
+		accelerationMax: 1,
+		keyboardSupport: true,
+		arrowScroll: 50,
+		touchpadSupport: true,
+		fixedBackground: true
 	});
 
-	showMenu.on('click', function(){
-		closeMenu.show();
-		showMenu.hide();
-		navMenu.slideDown();
-	});
+	let langDropDown = function () {
+		let langLink = $('#js-lang__link');
+		let langList = $('#js-lang-list');
 
-	//reviews-slider
-	$('#js-reviews-slider').slick({
+		langLink.on('click', function () {
+			$('#js-lang-list').toggleClass('lang-list--down');
+		});
 
-	});
+		$('#js-lang-list .lang-list__item').on('click', function () {
+			let langListItemText = $(this).text();
+			langLink.text(langListItemText);
+			langList.removeClass('lang-list--down');
+		});
+	};
 
-	let videoImage = $('#js-video__img');
-	let videoPlay = $('#js-video__play');
-
-	videoPlay.on('click', function(){
-		videoPlay.fadeOut();
-		videoImage.fadeOut();
-	});
+	langDropDown();
 
 });
 

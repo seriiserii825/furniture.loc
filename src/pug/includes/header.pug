@@ -1,2 +1,27 @@
 header.page-header
-	p Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos dicta esse pariatur impedit ad! Earum possimus atque numquam doloremque omnis eaque? Facere officia, veritatis sequi omnis ut corporis similique vero.
+	.container
+		.page-header__top
+			a(href="index.html").logo Мебель
+			.page-header__icons
+				a(href="auth.html").auth-link
+					+icon('user', 'auth-link__icon')
+				a(href="favorites.html").favorites-prev
+					+icon('heart', 'favorites-prev__icon')
+					span.favorites-prev__number (0)
+				.lang
+					.lang__link#js-lang__link Ru
+					ul.lang-list#js-lang-list
+						li.lang-list__item En
+						li.lang-list__item Lt
+						li.lang-list__item Fr
+						li.lang-list__item De
+						li.lang-list__item Sp
+				.search
+					a(href="").search__link
+						+icon('search', 'search__icon')
+					.search-popup
+						.search-popup__title
+						.search-popup__input
+							input(type="text")
+							+icon('search', 'search-popup__icon')
+		.page-header__menu

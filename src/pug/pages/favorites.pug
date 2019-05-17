@@ -5,7 +5,7 @@ block css
 	link(rel="stylesheet" type="text/css" href="assets/css/style.min.css")
 
 block title
-	title Главная
+	title Избранные товары
 
 block content
 	include ../includes/mixins
@@ -13,7 +13,10 @@ block content
 		include ../../../build/assets/i/svg/inline/sprite.svg
 
 	include ../includes/header
-	include ../includes/video/video-intro
+	.favorites
+		.favorites__title Избранные товары
+
+		.favorites__products
 
 	include ../includes/scripts/ie-scripts
 

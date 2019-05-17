@@ -1,4 +1,14 @@
 .page-header
-	padding 40px
-	background cyan
-	border 1px solid magenta
+	background white
+	&__top
+		display flex
+		justify-content space-between
+		align-items center
+		height 70px
+	&__icons
+		display flex
+		align-items center
+		justify-content flex-end
+		& > *
+			 &:not(:last-child)
+					margin-right 5px
